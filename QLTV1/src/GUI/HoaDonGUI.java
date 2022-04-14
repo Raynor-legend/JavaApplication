@@ -103,11 +103,11 @@ public class HoaDonGUI extends JPanel implements ActionListener, MouseListener {
     public void initComponents() {
         addMouseListener(this);
         setLayout(null);
-        setBounds(0, 0, 1200, 800);
+        setBounds(0, 0, 1000, 1000);
         setBackground(Color.decode("#78909C"));
 
         phienthi = QLHD();
-        phienthi.setBounds(0, 0, 1200, 800);
+        phienthi.setBounds(50, 50, 1200, 800);
         phienthi.setBackground(Color.decode("#78909C"));
         String[] timkiem = {"Mã nhân viên", "Mã khách hàng"};
         box1 = new JComboBox(timkiem);
@@ -123,7 +123,7 @@ public class HoaDonGUI extends JPanel implements ActionListener, MouseListener {
         p3.setBounds(0, 500, 600, 300);//set vị trí so với phienthi
         p3.setBackground(Color.decode("#78909C"));
         p4 = TableCT();
-        p4.setBounds(610, 500, 600, 450);
+        p4.setBounds(610, 500, 600, 600);
         p4.setBackground(Color.decode("#78909C"));
         phienthi.add(p2);
         phienthi.add(p3);
@@ -270,7 +270,7 @@ public class HoaDonGUI extends JPanel implements ActionListener, MouseListener {
             modelHD = new DefaultTableModel(header, 0);
         }
         tblQLHD = new JTable(null, header);
-        tblQLHD.setBounds(0, 0, 600, 300);
+        
 
         tblQLHD.setFont(new Font("Arial", 0, 15));
         tblQLHD.setModel(modelHD);//add model len table
@@ -292,6 +292,7 @@ public class HoaDonGUI extends JPanel implements ActionListener, MouseListener {
 
     public JPanel TableCT() {
         JPanel ptablect = new JPanel();
+        
         ptablect.setLayout(null);
         ptablect.setBackground(Color.decode("#FFCA28"));
         headerct = new Vector();
@@ -304,7 +305,7 @@ public class HoaDonGUI extends JPanel implements ActionListener, MouseListener {
             modelct = new DefaultTableModel(headerct, 0);
         }
         tblCT = new JTable(null, headerct);
-        tblCT.setBounds(0, 0, 600, 300);
+        
 
         tblCT.setFont(new Font("Arial", 0, 15));
         tblCT.setModel(modelct);//add model len table
@@ -314,7 +315,7 @@ public class HoaDonGUI extends JPanel implements ActionListener, MouseListener {
         tblCT.getTableHeader().setBackground(Color.decode("#4FC3F7"));//set background cho header
 
         scrollPanel = new JScrollPane(tblCT);
-        scrollPanel.setBounds(0, 0, 600, 300);
+        scrollPanel.setBounds(0, 0, 450, 300);
         scrollPanel.setPreferredSize(new Dimension(500, 500));
         tblCT.setPreferredSize(new Dimension(500, 500));
         ptablect.add(scrollPanel); // add table vào scrollPanel

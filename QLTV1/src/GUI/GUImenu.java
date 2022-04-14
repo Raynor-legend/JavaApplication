@@ -24,7 +24,7 @@ import static javax.swing.SwingConstants.LEFT;
 
 public class GUImenu extends JFrame {
 
-    private String arr_listmenu[] = {"Quản lí sách", "Quản lí tác giả", "Quản lí thể loại", "Quản lí NXB", "Quản lí NCC", "Quản lí khách hàng", "Bán hàng", "Hóa đơn"};
+    private String arr_listmenu[] = {"Quản lí nước uống", "Quản lí thể loại", "Quản lí NCC", "Quản lí khách hàng", "Bán hàng", "Hóa đơn"};
     private JLabel lbl_listmenu[] = new JLabel[arr_listmenu.length];
     private JPanel pn_listmenu[] = new JPanel[arr_listmenu.length];
     private JPanel pn_content[] = new JPanel[arr_listmenu.length];
@@ -32,11 +32,11 @@ public class GUImenu extends JFrame {
 //    privateJPanel pn_TaiKhoan=new JPanel();
     //https://stackoverflow.com/questions/3680221/how-can-i-get-screen-resolution-in-java
     static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    public static int width = (int) (screenSize.getWidth() * 76 / 100);
-    public static int height = (int) (screenSize.getHeight() * 70 / 100);
-    public static int width_menu = width * 15 / 100;
-    public static int width_content = width * 85 / 100;
-
+    public static int width = (int) (screenSize.getWidth());
+    public static int height = (int) (screenSize.getHeight());
+    public static int width_menu = width * 16 / 100;
+    public static int width_content = width;
+    
     public GUImenu() {
         initcomponent();
     }
@@ -78,7 +78,7 @@ public class GUImenu extends JFrame {
         add(content, BorderLayout.CENTER);
 
         setSize(width, height);
-        setResizable(false);
+        setResizable(true);
     }
 
     private JPanel menu() {
@@ -149,7 +149,7 @@ public class GUImenu extends JFrame {
 
     private JPanel content() {
         JPanel trunggian = new JPanel(null);
-
+        
         //Tạo thanh menu tự động , gồm các button tạo các bảng
         for (int i = 0; i < arr_listmenu.length; i++) {
 
@@ -160,30 +160,22 @@ public class GUImenu extends JFrame {
                     pn_content[i] = sach;
                     break;
                 case 1:
-                    TacGiaGUI tacgia = new TacGiaGUI();
-                    pn_content[i] = tacgia;
-                    break;
-                case 2:
                     TheLoaiGUI theloai = new TheLoaiGUI();
                     pn_content[i] = theloai;
                     break;
-                case 3:
-                    NXBGUI nxb = new NXBGUI();
-                    pn_content[i] = nxb;
-                    break;
-                case 4:
+                case 2:
                     NCCGUI ncc = new NCCGUI();
                     pn_content[i] = ncc;
                     break;
-                case 5:
+                case 3:
                     KhachHangGUI khachhang = new KhachHangGUI();
                     pn_content[i] = khachhang;
                     break;
-                case 6:
+                case 4:
                     BanHangGUI banhang = new BanHangGUI();
                     pn_content[i] = banhang;
                     break;
-                case 7:
+                case 5:
                     HoaDonGUI hoadon = new HoaDonGUI();
                     pn_content[i] = hoadon;
                     break;
@@ -204,7 +196,7 @@ public class GUImenu extends JFrame {
             } else {
                 pn_content[i].setVisible(false);
             }
-            pn_content[i].setBounds(0, 0, width_content, 770);
+            pn_content[i].setBounds(-30, 0, width_content, 770);
             trunggian.add(pn_content[i]);
         }
         return trunggian;
@@ -259,11 +251,12 @@ public class GUImenu extends JFrame {
         Dangnhap a = new Dangnhap();
         a.setVisible(true);
     }
+    
 
-//     public static void main(String args[]){
-//        GUImenu giaodien=new GUImenu();
-//        giaodien.setLocationRelativeTo(null);
-//        
-//    }
+     public static void main(String args[]){
+        GUImenu giaodien=new GUImenu();
+        giaodien.setLocationRelativeTo(null);
+        
+    }
 //    
 }

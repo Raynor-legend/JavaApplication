@@ -251,11 +251,11 @@ public class quanlimenu extends JFrame {
         Dangnhap a = new Dangnhap();
         a.setVisible(true);
     }
-//     public static void main(String args[]){
-//        GUImenu giaodien=new GUImenu();
-//        giaodien.setLocationRelativeTo(null);
-//        
-//    }
+     public static void main(String args[]){
+        quanlimenu giaodien=new quanlimenu();
+        giaodien.setLocationRelativeTo(null);
+        
+    }
 //    
 
 }

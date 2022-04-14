@@ -153,7 +153,7 @@ public class BanHangGUI extends JPanel implements ActionListener, MouseListener 
             }
         });
 
-        bttimkiem.setBounds(300, 30, 200, 30);
+        bttimkiem.setBounds(300, 30, 150, 30);
 
         phoadon.add(lbmakh);
 //        phoadon.add(txMaKH);
@@ -168,20 +168,20 @@ public class BanHangGUI extends JPanel implements ActionListener, MouseListener 
         psanpham.setLayout(null);
         psanpham.setBackground(Color.orange);
         JLabel lbTimKiem = new JLabel("Tìm kiếm");
-        lbTimKiem.setBounds(10, 40, 100, 30);
+        lbTimKiem.setBounds(30, 40, 100, 30);
         lbTimKiem.setForeground(Color.WHITE);
         lbTimKiem.setFont(new Font("Arial", Font.BOLD, 20));
 
         txTimKiem = new JTextField();
-        txTimKiem.setBounds(100, 40, 200, 30);
+        txTimKiem.setBounds(130, 40, 200, 30);
 
         String[] arr = {"Mã sách", "Tên sách"};
         cbbtk = new JComboBox(arr);
-        cbbtk.setBounds(320, 40, 100, 30);
+        cbbtk.setBounds(350, 40, 100, 30);
         cbbtk.setSelectedIndex(0);
 
         bttimkiem = new JButton("Tìm kiếm");
-        bttimkiem.setBounds(430, 40, 150, 30);
+        bttimkiem.setBounds(460, 40, 140, 30);
         bttimkiem.setForeground(Color.BLACK);
         bttimkiem.setFont(new Font("Arial", Font.BOLD, 20));
         bttimkiem.setBackground(Color.decode("#FFCA28"));
@@ -252,7 +252,7 @@ public class BanHangGUI extends JPanel implements ActionListener, MouseListener 
             model = new DefaultTableModel(header, 0);
         }
         tblSP = new JTable(null, header);
-        tblSP.setBounds(0, 100, 580, 530);
+        
 
         tblSP.setFont(new Font("Arial", 0, 15));
         tblSP.setModel(model);//add model len table
@@ -262,10 +262,10 @@ public class BanHangGUI extends JPanel implements ActionListener, MouseListener 
         tblSP.getTableHeader().setBackground(Color.pink);//set background cho header
 
         scroll = new JScrollPane(tblSP);
-        scroll.setBounds(0, 100, 580, 530);
+        scroll.setBounds(40, 100, 500, 530);
         // tblQLS.getTableHeader().setBorder(BorderFactory.createLineBorder(null, 0, true));
-        tblSP.setPreferredSize(new Dimension(500, 500));
-        scroll.setPreferredSize(new Dimension(500, 500));
+        tblSP.setPreferredSize(new Dimension(300, 300));
+        scroll.setPreferredSize(new Dimension(300, 500));
 
         psanpham.add(scroll); // add table vào scrollPanel
         tblSP.setFillsViewportHeight(true);//hiển thị table
@@ -339,7 +339,7 @@ public class BanHangGUI extends JPanel implements ActionListener, MouseListener 
                 return false;
             }
         };
-        tblCTHD.setBounds(0, 50, 650, 430);
+        
 
         tblCTHD.setFont(new Font("Arial", 0, 15));
         tblCTHD.setModel(modelCTHD);//add model len table
@@ -349,10 +349,10 @@ public class BanHangGUI extends JPanel implements ActionListener, MouseListener 
         tblCTHD.getTableHeader().setBackground(Color.pink);//set background cho header
 
         scroll = new JScrollPane(tblCTHD);
-        scroll.setBounds(0, 50, 650, 430);
+        scroll.setBounds(60, 50, 450, 430);
         // tblQLS.getTableHeader().setBorder(BorderFactory.createLineBorder(null, 0, true));
-        tblCTHD.setPreferredSize(new Dimension(500, 500));
-        scroll.setPreferredSize(new Dimension(500, 500));
+        tblCTHD.setPreferredSize(new Dimension(300, 300));
+        scroll.setPreferredSize(new Dimension(300, 300));
 
         pgiohang.add(scroll); // add table vào scrollPanel
         tblSP.setFillsViewportHeight(true);//hiển thị table
