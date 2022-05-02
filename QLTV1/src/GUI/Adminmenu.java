@@ -31,8 +31,8 @@ public class Adminmenu extends JFrame {
     private JPanel pn_taikhoan = new JPanel();
    
     static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    public static int width = (int) (screenSize.getWidth() * 76 / 100);
-    public static int height = (int) (screenSize.getHeight() * 70 / 100);
+    public static int width = (int) (screenSize.getWidth());
+    public static int height = (int) (screenSize.getHeight());
     public static int width_menu = width * 15 / 100;
     public static int width_content = width * 85 / 100;
 
@@ -177,7 +177,7 @@ public class Adminmenu extends JFrame {
         JPanel header = new JPanel(null);
         header.setBackground(Color.decode("#455A64"));
 
-        JLabel title = new JLabel("QUẢN LÝ CỬA HÀNG SÁCH");
+        JLabel title = new JLabel("QUẢN LÝ CỬA HÀNG BÁN NƯỚC");
         title.setBounds(width * 50 / 100, 0, 300, 30);
         title.setFont(new Font("Arial", Font.BOLD, 18));
         title.setForeground(Color.WHITE);

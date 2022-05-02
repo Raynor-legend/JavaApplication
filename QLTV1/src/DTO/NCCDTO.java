@@ -11,67 +11,69 @@ package DTO;
  */
 public class NCCDTO {
 
-    private String MaNCC, TenNCC, Diachi, Sdt, Mail, TrangThai;
-    // private String Sdt;
-   public NCCDTO() {
+	private String MaNCC, TenNCC, Diachi, Sdt, Mail, TrangThai;
 
-    }
+	// private String Sdt;
+	public NCCDTO() {
 
-    public NCCDTO(String MaNCC, String TenNCC, String Diachi, String Sdt, String Mail, String TrangThai) {
-        this.MaNCC = MaNCC;
-        this.TenNCC = TenNCC;
-        this.Diachi = Diachi;
-        this.Sdt = Sdt;
-        this.Mail = Mail;
-        this.TrangThai = TrangThai;
+	}
 
-    }
-    public String getMaNCC() {
-        return MaNCC;
-    }
+	public NCCDTO(String MaNCC, String TenNCC, String Diachi, String Sdt, String Mail, String TrangThai) {
+		this.MaNCC = MaNCC;
+		this.TenNCC = TenNCC;
+		this.Diachi = Diachi;
+		this.Sdt = Sdt;
+		this.Mail = Mail;
+		this.TrangThai = TrangThai;
 
-    public void setMaNCC(String MaNCC) {
-        this.MaNCC = MaNCC;
-    }
+	}
 
-    public String getTenNCC() {
-        return TenNCC;
-    }
+	public String getMaNCC() {
+		return MaNCC;
+	}
 
-    public void setTenNCC(String TenNCC) {
-        this.TenNCC = TenNCC;
-    }
+	public void setMaNCC(String MaNCC) {
+		this.MaNCC = MaNCC;
+	}
 
-    public String getDiachi() {
-        return Diachi;
-    }
+	public String getTenNCC() {
+		return TenNCC;
+	}
 
-    public void setDiachi(String Diachi) {
-        this.Diachi = Diachi;
-    }
+	public void setTenNCC(String TenNCC) {
+		this.TenNCC = TenNCC;
+	}
 
-    public String getSdt() {
-        return Sdt;
-    }
+	public String getDiachi() {
+		return Diachi;
+	}
 
-    public void setSdt(String Sdt) {
-        this.Sdt = Sdt;
-    }
+	public void setDiachi(String Diachi) {
+		this.Diachi = Diachi;
+	}
 
-    public String getMail() {
-        return Mail;
-    }
+	public String getSdt() {
+		return Sdt;
+	}
 
-    public void setMail(String Mail) {
-        this.Mail = Mail;
-    }
+	public void setSdt(String Sdt) {
+		this.Sdt = Sdt;
+	}
 
-    public String getTrangThai() {
-        return TrangThai;
-    }
+	public String getMail() {
+		return Mail;
+	}
 
-    public void setTrangThai(String TrangThai) {
-        this.TrangThai = TrangThai;
-    }
+	public void setMail(String Mail) {
+		this.Mail = Mail;
+	}
+
+	public String getTrangThai() {
+		return TrangThai;
+	}
+
+	public void setTrangThai(String TrangThai) {
+		this.TrangThai = TrangThai;
+	}
 
 }

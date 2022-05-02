@@ -11,7 +11,7 @@ package BUS;
  */
 import DAO.TheLoaiDAO;
 import DTO.TheLoaiDTO;
-import static BUS.SachBUS.dssach;
+import static BUS.SanphamBUS.dsSanpham;
 import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.JTable;

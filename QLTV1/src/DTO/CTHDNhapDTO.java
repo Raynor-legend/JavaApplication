@@ -13,17 +13,17 @@ public class CTHDNhapDTO {
 
     private int STT;
     private int MaPhieuNhap;
-    private String MaSach;
-    private String TenSach;
+    private String MaSanpham;
+    private String TenSanpham;
     private String DonGia;
     private String SoLuong;
     private String ThanhTien;
 
-    public CTHDNhapDTO(int STT, int MaPhieuNhap, String MaSach, String TenSach, String DonGia, String SoLuong, String ThanhTien) {
+    public CTHDNhapDTO(int STT, int MaPhieuNhap, String MaSanpham, String TenSanpham, String DonGia, String SoLuong, String ThanhTien) {
         this.STT = STT;
         this.MaPhieuNhap = MaPhieuNhap;
-        this.MaSach = MaSach;
-        this.TenSach = TenSach;
+        this.MaSanpham = MaSanpham;
+        this.TenSanpham = TenSanpham;
         this.DonGia = DonGia;
         this.SoLuong = SoLuong;
         this.ThanhTien = ThanhTien;
@@ -32,8 +32,8 @@ public class CTHDNhapDTO {
     public CTHDNhapDTO(CTHDNhapDTO ct) {
         this.STT = STT;
         this.MaPhieuNhap = ct.MaPhieuNhap;
-        this.MaSach = ct.MaSach;
-        this.TenSach = ct.TenSach;
+        this.MaSanpham = ct.MaSanpham;
+        this.TenSanpham = ct.TenSanpham;
         this.DonGia = ct.DonGia;
         this.SoLuong = ct.SoLuong;
         this.ThanhTien = ct.ThanhTien;
@@ -42,8 +42,8 @@ public class CTHDNhapDTO {
     public CTHDNhapDTO() {
         this.STT = 0;
         this.MaPhieuNhap = 0;
-        this.MaSach = "";
-        this.TenSach = "";
+        this.MaSanpham = "";
+        this.TenSanpham = "";
         this.DonGia = "";
         this.SoLuong = "";
         this.ThanhTien = "";
@@ -65,20 +65,20 @@ public class CTHDNhapDTO {
         this.MaPhieuNhap = MaPhieuNhap;
     }
 
-    public String getMaSach() {
-        return MaSach;
+    public String getMaSanpham() {
+        return MaSanpham;
     }
 
-    public void setMaSach(String MaSach) {
-        this.MaSach = MaSach;
+    public void setMaSanpham(String MaSanpham) {
+        this.MaSanpham = MaSanpham;
     }
 
-    public String getTenSach() {
-        return TenSach;
+    public String getTenSanpham() {
+        return TenSanpham;
     }
 
-    public void setTenSach(String TenSach) {
-        this.TenSach = TenSach;
+    public void setTenSanpham(String TenSanpham) {
+        this.TenSanpham = TenSanpham;
     }
 
     public String getDonGia() {

@@ -3,8 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/work/excercises/Nhom10_Quanlisach_NguyenNgocQuynhNhu_NguyenTruongHungLam_DangThiKieuOanh_LamTanPhat/QLTV1/src/GUI/Dangnhap.java</file>
-            <file>file:/E:/work/excercises/Nhom10_Quanlisach_NguyenNgocQuynhNhu_NguyenTruongHungLam_DangThiKieuOanh_LamTanPhat/QLTV1/src/DAO/ConnectionUtil.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/QLTV1/src/GUI/Adminmenu.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/QLTV1/src/BUS/CongCu.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/QLTV1/src/GUI/GUImenu.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/QLTV1/src/DAO/CTHDNhapDAO.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/QLTV1/src/GUI/BanHangGUI.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/QLTV1/src/DAO/Connect.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/QLTV1/src/GUI/DanhMucSanpham.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/QLTV1/src/GUI/TaiKhoanGUI.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/QLTV1/src/BUS/HoaDonBUS.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/QLTV1/src/GUI/quanlimenu.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/QLTV1/src/GUI/SanphamGUI.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/QLTV1/src/GUI/HoaDonGUI.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/QLTV1/src/DAO/HoaDonDAO.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/QLTV1/src/GUI/Dangnhap.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/QLTV1/src/DAO/ConnectionUtil.java</file>
         </group>
     </open-files>
 </project-private>

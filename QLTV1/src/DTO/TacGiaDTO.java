@@ -10,40 +10,42 @@ package DTO;
  * @author HP
  */
 public class TacGiaDTO {
-    private String MaTG;
-    private String TenTG;
-    private String TrangThai;
-    public TacGiaDTO(){
-        
-    }
-    public TacGiaDTO(String MaTG,String TenTG,String TrangThai)
-    {
-        this.MaTG=MaTG;
-        this.TenTG=TenTG;
-        this.TrangThai=TrangThai;
-    }
-    public String getMaTG()
-    {
-        return MaTG;
-    }
-    public void setMaTG(String MaTG)
-    {
-        this.MaTG=MaTG;
-    }
-    public String getTenTG()
-    {
-        return TenTG;
-    }
-    public void setTenTG(String TenTG){
-        this.TenTG=TenTG;
-    }
+	private String MaTG;
+	private String TenTG;
+	private String TrangThai;
 
-    public String getTrangThai() {
-        return TrangThai;
-    }
+	public TacGiaDTO() {
 
-    public void setTrangThai(String TrangThai) {
-        this.TrangThai = TrangThai;
-    }
-    
+	}
+
+	public TacGiaDTO(String MaTG, String TenTG, String TrangThai) {
+		this.MaTG = MaTG;
+		this.TenTG = TenTG;
+		this.TrangThai = TrangThai;
+	}
+
+	public String getMaTG() {
+		return MaTG;
+	}
+
+	public void setMaTG(String MaTG) {
+		this.MaTG = MaTG;
+	}
+
+	public String getTenTG() {
+		return TenTG;
+	}
+
+	public void setTenTG(String TenTG) {
+		this.TenTG = TenTG;
+	}
+
+	public String getTrangThai() {
+		return TrangThai;
+	}
+
+	public void setTrangThai(String TrangThai) {
+		this.TrangThai = TrangThai;
+	}
+
 }

@@ -109,7 +109,7 @@ public class NhanVienGUI extends JPanel implements ActionListener, MouseListener
         phienthi = QLNV();
         phienthi.setBounds(0, 0, 1200, 800);
         phienthi.setBackground(Color.decode("#78909C"));
-        String[] timkiem = {"Mã NV", "Tên NV", "SDT"};
+        String[] timkiem = {"Mã NV", "Tên NV", "SĐT"};
         box1 = new JComboBox(timkiem);
         box1.setBounds(540, 50, 100, 30);
         box1.setSelectedIndex(0);
@@ -579,7 +579,7 @@ public class NhanVienGUI extends JPanel implements ActionListener, MouseListener
         NhanVienBUS bus = new NhanVienBUS();
         int i = tblQLNV.getSelectedRow();
         if (i < 0) {
-            JOptionPane.showMessageDialog(null, "Bạn cần phải chọn 1 cuốn sach");
+            JOptionPane.showMessageDialog(null, "Bạn cần phải chọn 1 sản phẩm");
         } else {
             if (JOptionPane.showConfirmDialog(null, "Bạn có chắc muốn xoá không", "Thông báo",
                     JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
