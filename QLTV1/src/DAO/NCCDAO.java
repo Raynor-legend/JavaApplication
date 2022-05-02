@@ -98,6 +98,7 @@ public class NCCDAO {
 			qry = qry + "," + "'" + ncc.getDiachi() + "'";
 			qry = qry + ",'" + ncc.getSdt() + "'";
 			qry = qry + ",'" + ncc.getMail() + "'";
+                        qry = qry + ",'" + ncc.getTrangThai()+ "'";
 			qry = qry + ")";
 			conn.getStatement();
 			conn.ExecuteUpdate(qry);

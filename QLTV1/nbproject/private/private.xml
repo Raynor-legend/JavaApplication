@@ -3,12 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/work/JavaApplication/JavaApplication-main/JavaApplication-main/QLTV1/src/DAO/PhieuNhapDAO.java</file>
-            <file>file:/E:/work/JavaApplication/JavaApplication-main/JavaApplication-main/QLTV1/src/GUI/NhapHangGUI.java</file>
-            <file>file:/E:/work/JavaApplication/JavaApplication-main/JavaApplication-main/QLTV1/src/GUI/GUImenu.java</file>
-            <file>file:/E:/work/JavaApplication/JavaApplication-main/JavaApplication-main/QLTV1/src/GUI/SanphamGUI.java</file>
-            <file>file:/E:/work/JavaApplication/JavaApplication-main/JavaApplication-main/QLTV1/src/BUS/PhieuNhapBUS.java</file>
-            <file>file:/E:/work/JavaApplication/JavaApplication-main/JavaApplication-main/QLTV1/src/BUS/HienHanh.java</file>
+            <file>file:/E:/work/excercises/JavaApplication/QLTV1/src/DTO/NhanVienDTO.java</file>
+            <file>file:/E:/work/excercises/JavaApplication/QLTV1/src/GUI/TaiKhoanGUI.java</file>
+            <file>file:/E:/work/excercises/JavaApplication/QLTV1/src/GUI/NhanVienGUI.java</file>
+            <file>file:/E:/work/excercises/JavaApplication/QLTV1/src/GUI/frmThemTK.java</file>
+            <file>file:/E:/work/excercises/JavaApplication/QLTV1/src/GUI/Adminmenu.java</file>
+            <file>file:/E:/work/excercises/JavaApplication/QLTV1/src/GUI/SachGUI.java</file>
         </group>
     </open-files>
 </project-private>

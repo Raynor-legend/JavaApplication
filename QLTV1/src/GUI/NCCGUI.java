@@ -378,9 +378,11 @@ public class NCCGUI extends JPanel implements ActionListener, MouseListener {
             }
             if (!CongCu.checkPhoneNumes(txSdt.getText())) {
                 JOptionPane.showMessageDialog(null, "SĐT chỉ bao gồm 10 số");
+                return false;
             }
             if (!CongCu.checkGmail(txMail.getText())) {
                 JOptionPane.showMessageDialog(null, "Mail không hợp lệ!");
+                return false;
             }
         }
         return true;

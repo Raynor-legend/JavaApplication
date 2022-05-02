@@ -81,7 +81,7 @@ public class ThongKeGUI extends JPanel {
 		lbtc.setForeground(Color.WHITE);
 		lbtc.setFont(new Font("Arial", Font.BOLD, 20));
 
-		String[] tc = { "Nhân viên", "Khách hàng", "Sản phẩm tồn kho", "Sản phẩm bán", "Sản phẩm nhập" };
+		String[] tc = { "Nhân viên", "Sản phẩm tồn kho", "Sản phẩm bán", "Sản phẩm nhập" };
 		cbbtc = new JComboBox(tc);
 		cbbtc.setSelectedIndex(0);
 		cbbtc.setBounds(160, 20, 200, 30);
@@ -187,14 +187,14 @@ public class ThongKeGUI extends JPanel {
 			}
 			break;
 		}
-		case "Khách hàng": {
-			System.out.println("Khách hàng");
-			thongKeBUS.ThongKeKH(fromDate, toDate);
-			for (ThongKeDTO tkDTO : ThongKeBUS.dsTK) {
-				Add_row(tkDTO);
-			}
-			break;
-		}
+//		case "Khách hàng": {
+//			System.out.println("Khách hàng");
+//			thongKeBUS.ThongKeKH(fromDate, toDate);
+//			for (ThongKeDTO tkDTO : ThongKeBUS.dsTK) {
+//				Add_row(tkDTO);
+//			}
+//			break;
+//		}
 
 		case "Sản phẩm tồn kho": {
 			System.out.println("Khách hàng");

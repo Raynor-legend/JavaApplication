@@ -118,7 +118,7 @@ public class SanphamGUI extends JPanel implements ActionListener, MouseListener 
 		JLabel[] label;
 		label = new JLabel[8];
 		JTextField[] textfield;
-		String[] arrSanpham = { "Tìm kiếm", "Mã nước uống", "Tên nước uống", "Mã tác giả",
+		String[] arrSanpham = { "Tìm kiếm", "Mã nước uống", "Tên nước uống","Thể loại",
 				"Số lượng", "Đơn giá bán" };
 
 		int toadoxLabel = 100, toadoyLabel = 100;
@@ -213,9 +213,9 @@ public class SanphamGUI extends JPanel implements ActionListener, MouseListener 
 					}
 				});
 
-				cbbMaTL.setBounds(200, 260, 100, 30);
+				cbbMaTL.setBounds(200, 220, 100, 30);
 				txMaTL = new JTextField();
-				txMaTL.setBounds(310, 260, 90, 30);
+				txMaTL.setBounds(310, 220, 90, 30);
 				txMaTL.setEnabled(false);
 
 				String getcbbMaTL = cbbMaTL.getSelectedItem().toString();
@@ -266,7 +266,7 @@ public class SanphamGUI extends JPanel implements ActionListener, MouseListener 
 			case 4: {
 				txSoluong = new JTextField();
 				txSoluong.setBounds(toadoxTextField, toadoyTextField, 200, 30);
-				txSoluong.setEnabled(false);
+				txSoluong.setEnabled(true);
 				txSoluong.setText("0");
 				pQLS.add(txSoluong);
 				toadoyTextField = toadoyTextField + 40;

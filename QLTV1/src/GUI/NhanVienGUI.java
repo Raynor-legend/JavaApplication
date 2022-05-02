@@ -571,6 +571,14 @@ public class NhanVienGUI extends JPanel implements ActionListener, MouseListener
                 }
             }
         }
+//                button[1].addActionListener(new ActionListener() {
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				frmThemTK frmThemTK = new frmThemTK();
+//				frmThemTK.setVisible(true);
+//
+//			}
+//		});
     }
 
     private void btXoaMouseClicked() {
