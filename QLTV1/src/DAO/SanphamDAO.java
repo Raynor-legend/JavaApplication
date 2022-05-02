@@ -28,11 +28,9 @@ public class SanphamDAO {
                SanphamDTO Sanpham = new SanphamDTO();
                Sanpham.setMaSanpham(rs.getString(1));
                Sanpham.setTenSanpham(rs.getString(2));//Dat gia tri cho ten Sanpham 
-               Sanpham.setMaTG(rs.getString(3));
-               Sanpham.setMaTL(rs.getString(4));
-               Sanpham.setMaNXB(rs.getString(5));
-               Sanpham.setSoLuong(rs.getString(6));
-               Sanpham.setDonGia(rs.getString(7));
+               Sanpham.setMaTL(rs.getString(3));
+               Sanpham.setSoLuong(rs.getString(4));
+               Sanpham.setDonGia(rs.getString(5));
               
                dsSanpham.add(Sanpham);
                
@@ -49,9 +47,7 @@ public class SanphamDAO {
             String qry ="insert into sanpham values (";
             qry = qry+"'"+Sanpham.getMaSanpham()+"'";
             qry = qry+","+"'"+Sanpham.getTenSanpham()+"'";
-            qry = qry+","+"'"+Sanpham.getMaTG()+"'";
             qry = qry+","+"'"+Sanpham.getMaTL()+"'";
-            qry = qry+","+"'"+Sanpham.getMaNXB()+"'";
             qry = qry+","+"'"+Sanpham.getSoLuong()+"'";
             qry = qry+","+"'"+Sanpham.getDonGia()+"'";
              qry = qry+")";
@@ -80,9 +76,7 @@ public class SanphamDAO {
             String qry="Update Sanpham Set ";
             qry = qry+"MASP="+"'"+Sanpham.getMaSanpham()+"',";
             qry = qry+"TENSP="+"'"+Sanpham.getTenSanpham()+"'";
-            qry = qry+",maTG="+"'"+Sanpham.getMaTG()+"'";
             qry = qry+",MaTL="+"'"+Sanpham.getMaTL()+"'";
-            qry = qry+",MANCC="+"'"+Sanpham.getMaNXB()+"'";
             qry = qry+",SOLUONG="+"'"+Sanpham.getSoLuong()+"'";
             qry = qry+",DONGIABAN="+"'"+Sanpham.getDonGia()+"'";
             qry = qry+" "+"where MASP='"+Sanpham.getMaSanpham()+"'";

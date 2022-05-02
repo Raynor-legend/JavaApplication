@@ -13,10 +13,10 @@ import java.sql.PreparedStatement;
 public class ConnectionUtil {
     String className ="com.mysql.cj.jdbc.Driver";
     String Host ="localhost";
-    String Database ="bookstore-8";
+    String Database ="bookstore";
     String Username ="root";
     String Password ="";
-    String url ="jdbc:mysql://localhost:3306/bookstore-8";
+    String url ="jdbc:mysql://localhost:3306/bookstore";
     Connection connect = null;
     Statement st = null;
     ResultSet rs = null;

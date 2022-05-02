@@ -425,7 +425,7 @@ public class TaiKhoanGUI extends JPanel implements ActionListener, MouseListener
 	}
 
 	private void bttimkiemMouseClicked() {
-		System.out.println("1111111111");
+		System.out.println("tới rồi nè");
 		String selectedItem = (String) box1.getSelectedItem();
 		String tukhoa = txTimKiem.getText();
 		if (tukhoa.equals("")) {

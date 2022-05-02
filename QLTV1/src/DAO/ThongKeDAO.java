@@ -75,9 +75,9 @@ public class ThongKeDAO {
     public ArrayList ThongKeSB(String fromDate, String toDate){
         ArrayList<ThongKeDTO> dstk= new ArrayList<ThongKeDTO>();
         try{
-            String str ="SELECT sach.MASACH, sach.TENSACH, SUM(cthd.SOLUONG),SUM(cthd.THANHTIEN) FROM "
-                    +" (sach INNER JOIN cthd ON sach.MASACH= cthd.MASACH) INNER JOIN hoadon ON cthd.MAHD = hoadon.MAHD "
-                    +" WHERE hoadon.TRANGTHAI =1 AND (hoadon.NGAYLAP BETWEEN '"+ fromDate +"' AND '"+ toDate+"') GROUP BY sach.MASACH";
+            String str ="SELECT sanpham.MASP, sanpham.TENSP, SUM(cthd.SOLUONG),SUM(cthd.THANHTIEN) FROM "
+                    +" (sanpham INNER JOIN cthd ON sanpham.MASP= cthd.MASP) INNER JOIN hoadon ON cthd.MAHD = hoadon.MAHD "
+                    +" WHERE hoadon.TRANGTHAI =1 AND (hoadon.NGAYLAP BETWEEN '"+ fromDate +"' AND '"+ toDate+"') GROUP BY sanpham.MASP";
            
             ResultSet rs = conn.excuteQuery(str);
             while (rs.next()) {
@@ -96,9 +96,9 @@ public class ThongKeDAO {
     public ArrayList ThongKeSN (String fromDate, String toDate){
          ArrayList<ThongKeDTO> dstk= new ArrayList<ThongKeDTO>();
         try{
-            String str ="SELECT sach.MASACH,sach.TENSACH,SUM(cthdnhap.SOLUONG),SUM(cthdnhap.THANHTIEN) FROM"
-                    + " (sach INNER JOIN cthdnhap ON sach.MASACH = cthdnhap.MASACH ) INNER JOIN nhapsach ON cthdnhap.MAPHIEUNHAP = nhapsach.MANHAP"
-                    + " WHERE nhapsach.TRANGTHAI AND ( nhapsach.NGAYNHAP BETWEEN '" + fromDate + "' AND '"+ toDate +"' )GROUP BY sach.MASACH";
+            String str ="SELECT sanpham.MASP,sanpham.TENSP,SUM(cthdnhap.SOLUONG),SUM(cthdnhap.THANHTIEN) FROM"
+                    + " (sanpham INNER JOIN cthdnhap ON sanpham.MASP = cthdnhap.MASP ) INNER JOIN nhapsp ON cthdnhap.MAPHIEUNHAP = nhapsp.MANHAP"
+                    + " WHERE nhapsp.TRANGTHAI AND ( nhapsp.NGAYNHAP BETWEEN '" + fromDate + "' AND '"+ toDate +"' )GROUP BY sanpham.MASP";
            // Bên chi tiết hoá đơn nhập của tụi em có gì trong đó đâu mà để nó SUM
            
             ResultSet rs = conn.excuteQuery(str);
@@ -119,11 +119,11 @@ public class ThongKeDAO {
     public ArrayList ThongKeSK(){
         ArrayList<ThongKeDTO> dstk= new ArrayList<ThongKeDTO>();
         try{
-            String str ="SELECT MASACH,"
-                +"TENSACH,"
+            String str ="SELECT MASP,"
+                +"TENSP,"
                 + " SOLUONG,"
-                + " SOLUONG * DONGIABAN FROM `sach`"
-                + " GROUP BY MASACH";
+                + " SOLUONG * DONGIABAN FROM `sanpham`"
+                + " GROUP BY MASP";
             ResultSet rs = conn.excuteQuery(str);
             while (rs.next()) {
                 ThongKeDTO tk = new ThongKeDTO();

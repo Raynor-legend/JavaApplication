@@ -13,8 +13,6 @@ public class SanphamDTO {
 	private String MaSanpham;
 	private String TenSanpham;
 	private String MaTL;
-	private String MaTG;
-	private String MaNXB;
 	private String SoLuong;
 	private String DonGia;
 
@@ -22,13 +20,11 @@ public class SanphamDTO {
 
 	}
 
-	public SanphamDTO(String MaSanpham, String TenSanpham, String MaTL, String MaTG, String MaNXB, String SoLuong,
+	public SanphamDTO(String MaSanpham, String TenSanpham, String MaTL, String SoLuong,
 			String DonGia) {
 		this.MaSanpham = MaSanpham;
 		this.TenSanpham = TenSanpham;
 		this.MaTL = MaTL;
-		this.MaTG = MaTG;
-		this.MaNXB = MaNXB;
 		this.SoLuong = SoLuong;
 		this.DonGia = DonGia;
 	}
@@ -57,21 +53,6 @@ public class SanphamDTO {
 		this.MaTL = MaTL;
 	}
 
-	public String getMaTG() {
-		return MaTG;
-	}
-
-	public void setMaTG(String MaTG) {
-		this.MaTG = MaTG;
-	}
-
-	public String getMaNXB() {
-		return MaNXB;
-	}
-
-	public void setMaNXB(String MaNXB) {
-		this.MaNXB = MaNXB;
-	}
 
 	public String getSoLuong() {
 		return SoLuong;

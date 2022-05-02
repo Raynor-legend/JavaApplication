@@ -100,15 +100,6 @@ public class SanphamBUS {
         return kq;
     }
 
-    public ArrayList<SanphamDTO> timkiem_matacgia(String matg) {
-        ArrayList<SanphamDTO> kq = new ArrayList<SanphamDTO>();
-        for (SanphamDTO Sanpham : dsSanpham) {
-            if (Sanpham.getMaTG().toLowerCase().contains(matg.toLowerCase())) {
-                kq.add(Sanpham);
-            }
-        }
-        return kq;
-    }
     public ArrayList<SanphamDTO> timkiem_tenSanpham(String tenSanpham) {
         ArrayList<SanphamDTO> kq = new ArrayList<SanphamDTO>();
         for (SanphamDTO Sanpham : dsSanpham) {

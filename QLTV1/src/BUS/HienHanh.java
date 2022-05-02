@@ -48,13 +48,13 @@ public class HienHanh {
     public static String MaHD;
     public static String NCC;
 
-    public static String getNCC() {
-        return NCC;
-    }
-
-    public static void setNCC(String NCC) {
-        HienHanh.NCC = NCC;
-    }
+//    public static String getNCC() {
+//        return NCC;
+//    }
+//
+//    public static void setNCC(String NCC) {
+//        HienHanh.NCC = NCC;
+//    }
     public static String TongTien;
 
     public static String getTongTien() {

@@ -466,13 +466,13 @@ public class NhapHangGUI extends JPanel implements ActionListener, MouseListener
 		CTHDNhapBUS chitiethdNhapBUS = new CTHDNhapBUS();
 
 		if (tblCTHDNhap.getRowCount() != 0) {
-			txMaNCC = new JTextField();
+			//txMaNCC = new JTextField();
 			txMaPhieuNhap = new JTextField();
 			txMaNV = new JTextField();
 			int ma = pnBUS.getMa();
 			pnDTO.setMaPhieuNhap(ma);
 
-			pnDTO.setMaNCC(HienHanh.getNCC());
+			//pnDTO.setMaNCC(HienHanh.getNCC());
 
 			pnDTO.setMaNV(HienHanh.NhanVien);
 

@@ -560,15 +560,16 @@ public class PhieuNhapGUI extends JPanel implements ActionListener, MouseListene
 		PhieuNhapBUS phieunhapBUS = new PhieuNhapBUS();
 		CTHDNhapDTO chitiethdNhapDTO = new CTHDNhapDTO();
 		CTHDNhapBUS chitiethdBUS = new CTHDNhapBUS();
-		if (HienHanh.getNCC() != null) {
+//		if (HienHanh.getNCC() != null) 
+                {
 			if (tblCTHDNhap.getRowCount() != 0) {
-				txMaNCC = new JTextField();
+				//txMaNCC = new JTextField();
 				txMaPhieuNhap = new JTextField();
 				txMaNV = new JTextField();
 				int ma = phieunhapBUS.getMa();
 				phieunhapDTO.setMaPhieuNhap(ma);
 
-				phieunhapDTO.setMaNCC(HienHanh.getNCC());
+				//phieunhapDTO.setMaNCC(HienHanh.getNCC());
 
 				phieunhapDTO.setMaNV(HienHanh.NhanVien);
 
@@ -613,9 +614,9 @@ public class PhieuNhapGUI extends JPanel implements ActionListener, MouseListene
 			}
 			DefaultTableModel modelCTHDNhap = (DefaultTableModel) tblCTHDNhap.getModel();
 			modelCTHDNhap.setRowCount(0);
-			HienHanh.setNCC(null);
-		} else {
-			JOptionPane.showMessageDialog(null, "Vui lòng chọn nhà cung cấp");
+//			HienHanh.setNCC(null);
+//		} else {
+//			//JOptionPane.showMessageDialog(null, "Vui lòng chọn nhà cung cấp");
 		}
 	}
 

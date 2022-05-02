@@ -22,13 +22,13 @@ public class PhieuNhapDAO {
         ArrayList dspn= new ArrayList<PhieuNhapDTO>();
         
         try{
-            String  qry= "select * from nhapsach where TRANGTHAI='1'";
+            String  qry= "select * from nhapsp where TRANGTHAI='1'";
             ResultSet rs = conn.excuteQuery(qry);
             while (rs.next()){
                 PhieuNhapDTO pn = new PhieuNhapDTO();
                 pn.setMaPhieuNhap(rs.getInt(1));
                 pn.setMaNV(rs.getString(2));
-                pn.setMaNCC(rs.getString(3));
+                //pn.setMaNCC(rs.getString(3));
                 pn.setNgayNhap(LocalDate.parse(rs.getString(4)));
                 pn.setTongtien(rs.getString(5));
                 
@@ -44,13 +44,13 @@ public class PhieuNhapDAO {
     public ArrayList docPNan(){
         ArrayList dspnan= new ArrayList<PhieuNhapDTO>();
         try{
-            String  qry= "select * from nhapsach where TRANGTHAI='0'";
+            String  qry= "select * from nhapsp where TRANGTHAI='0'";
             ResultSet rs = conn.excuteQuery(qry);
             while (rs.next()){
                 PhieuNhapDTO pn = new PhieuNhapDTO();
                 pn.setMaPhieuNhap(rs.getInt(1));
                 pn.setMaNV(rs.getString(2));
-                pn.setMaNCC(rs.getString(3));
+                //pn.setMaNCC(rs.getString(3));
                 pn.setNgayNhap(LocalDate.parse(rs.getString(4)));
                 pn.setTongtien(rs.getString(5));
                 
@@ -66,10 +66,10 @@ public class PhieuNhapDAO {
         
     public void thempn(PhieuNhapDTO pn){
         try{
-            String qry = "insert into nhapsach values(";
+            String qry = "insert into nhapsp values(";
             qry= qry+ "'"+pn.getMaPhieuNhap()+ "'";
             qry = qry+ ",'" +pn.getMaNV()+ "'";
-            qry= qry+ ",'"+pn.getMaNCC()+ "'";
+            //qry= qry+ ",'"+pn.getMaNCC()+ "'";
             qry= qry+ ",'"+pn.getNgayNhap()+ "'";
             qry= qry+ ",'"+pn.getTongtien()+ "'";
             qry = qry +",'1'";
@@ -86,7 +86,7 @@ public class PhieuNhapDAO {
     public void xoa(PhieuNhapDTO pn) {
         
         try {
-            String qry = "Update nhapsach Set TRANGTHAI = '0' where MANHAP ='" + pn.getMaPhieuNhap()+"'";
+            String qry = "Update nhapsp Set TRANGTHAI = '0' where MANHAP ='" + pn.getMaPhieuNhap()+"'";
             conn.getStatement();
             conn.ExecuteUpdate(qry);
             System.out.println(qry);

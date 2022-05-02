@@ -15,17 +15,21 @@ import DTO.NXBDTO;
 import DTO.SanphamDTO;
 import DTO.TacGiaDTO;
 import DTO.TheLoaiDTO;
+import static GUI.TacGiaGUI.model;
 import java.awt.*;
 import static java.awt.Font.BOLD;
 import java.awt.event.*;
 import java.awt.event.ActionListener;
 
 import java.io.BufferedOutputStream;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Vector;
+import javafx.scene.control.Cell;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -35,7 +39,9 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.w3c.dom.events.EventTarget;
 import org.w3c.dom.events.MouseEvent;
+import org.w3c.dom.views.AbstractView;
 
 /**
  *
@@ -50,8 +56,8 @@ public class SanphamGUI extends JPanel implements ActionListener, MouseListener 
 	public JTextField txMaSanpham;
 	public JTextField txTenSanpham;
 	public JTextField txMaTL;
-	public JTextField txMaTG;
-	public JTextField txMaNXB;
+//	public JTextField txMaTG;
+//	public JTextField txMaNXB;
 	public JTextField txSoluong;
 	public JTextField txDongiaban;
 	public JTextField txTimKiem;
@@ -112,7 +118,7 @@ public class SanphamGUI extends JPanel implements ActionListener, MouseListener 
 		JLabel[] label;
 		label = new JLabel[8];
 		JTextField[] textfield;
-		String[] arrSanpham = { "Tìm kiếm", "Mã nước uống", "Tên nước uống", "Mã tác giả", "Mã thể loại", "Mã NXB",
+		String[] arrSanpham = { "Tìm kiếm", "Mã nước uống", "Tên nước uống", "Mã tác giả",
 				"Số lượng", "Đơn giá bán" };
 
 		int toadoxLabel = 100, toadoyLabel = 100;
@@ -153,44 +159,44 @@ public class SanphamGUI extends JPanel implements ActionListener, MouseListener 
 				toadoyTextField = toadoyTextField + 40;
 				break;
 			}
+//			case 3: {
+//				TacGiaBUS b = new TacGiaBUS();
+//				dstg = b.docTacGia();
+//				cbbMaTG = new JComboBox();
+//
+//				for (int k = 0; k < dstg.size(); k++) {
+//					if (dstg.get(k).getTrangThai().equals("1"))
+//						;
+//					cbbMaTG.addItem(dstg.get(k).getMaTG());
+//				}
+//				cbbMaTG.addActionListener(new ActionListener() {
+//
+//					public void actionPerformed(ActionEvent e) {
+//						if (cbbMaTG.getItemCount() != 0) {
+//							showTenTG();
+//						}
+//					}
+//				});
+//
+//				cbbMaTG.setBounds(200, 220, 100, 30);
+//				txMaTG = new JTextField();
+//				txMaTG.setBounds(310, 220, 90, 30);
+//				txMaTG.setEnabled(false);
+//
+//				String getcbbMaTG = cbbMaTG.getSelectedItem().toString();
+//				for (int p = 0; p < dstg.size(); p++) {
+//					if (getcbbMaTG.equals(dstg.get(p).getMaTG())) {
+//
+//						txMaTG.setText(dstg.get(p).getTenTG());
+//					}
+//				}
+//
+//				pQLS.add(txMaTG);
+//				pQLS.add(cbbMaTG);
+//				toadoyTextField = toadoyTextField + 40;
+//				break;
+//			}
 			case 3: {
-				TacGiaBUS b = new TacGiaBUS();
-				dstg = b.docTacGia();
-				cbbMaTG = new JComboBox();
-
-				for (int k = 0; k < dstg.size(); k++) {
-					if (dstg.get(k).getTrangThai().equals("1"))
-						;
-					cbbMaTG.addItem(dstg.get(k).getMaTG());
-				}
-				cbbMaTG.addActionListener(new ActionListener() {
-
-					public void actionPerformed(ActionEvent e) {
-						if (cbbMaTG.getItemCount() != 0) {
-							showTenTG();
-						}
-					}
-				});
-
-				cbbMaTG.setBounds(200, 220, 100, 30);
-				txMaTG = new JTextField();
-				txMaTG.setBounds(310, 220, 90, 30);
-				txMaTG.setEnabled(false);
-
-				String getcbbMaTG = cbbMaTG.getSelectedItem().toString();
-				for (int p = 0; p < dstg.size(); p++) {
-					if (getcbbMaTG.equals(dstg.get(p).getMaTG())) {
-
-						txMaTG.setText(dstg.get(p).getTenTG());
-					}
-				}
-
-				pQLS.add(txMaTG);
-				pQLS.add(cbbMaTG);
-				toadoyTextField = toadoyTextField + 40;
-				break;
-			}
-			case 4: {
 				TheLoaiBUS a = new TheLoaiBUS();
 				ArrayList<TheLoaiDTO> arrTL = new ArrayList<TheLoaiDTO>();
 				arrTL = a.docTheLoai();
@@ -225,39 +231,39 @@ public class SanphamGUI extends JPanel implements ActionListener, MouseListener 
 				break;
 			}
 
-			case 5: {
-				NXBBUS c = new NXBBUS();
-				ArrayList<NXBDTO> arrNXB = new ArrayList<NXBDTO>();
-				arrNXB = c.docNXB();
-				cbbNXB = new JComboBox();
-				for (int l = 0; l < arrNXB.size(); l++) {
-					cbbNXB.addItem(arrNXB.get(l).getMaNXB());
-				}
-
-				cbbNXB.addActionListener(new ActionListener() {
-
-					public void actionPerformed(ActionEvent e) {
-						showTenNXB();
-					}
-				});
-
-				cbbNXB.setBounds(200, 300, 100, 30);
-				txMaNXB = new JTextField();
-				txMaNXB.setBounds(310, 300, 90, 30);
-				txMaNXB.setEnabled(false);
-
-				String getcbbMaNXB = cbbNXB.getSelectedItem().toString();
-				for (int p = 0; p < arrNXB.size(); p++) {
-					if (getcbbMaNXB.equals(arrNXB.get(p).getMaNXB())) {
-						txMaNXB.setText(arrNXB.get(p).getTenNXB());
-					}
-				}
-				pQLS.add(txMaNXB);
-				pQLS.add(cbbNXB);
-				toadoyTextField = toadoyTextField + 40;
-				break;
-			}
-			case 6: {
+//			case 5: {
+//				NXBBUS c = new NXBBUS();
+//				ArrayList<NXBDTO> arrNXB = new ArrayList<NXBDTO>();
+//				arrNXB = c.docNXB();
+//				cbbNXB = new JComboBox();
+//				for (int l = 0; l < arrNXB.size(); l++) {
+//					cbbNXB.addItem(arrNXB.get(l).getMaNXB());
+//				}
+//
+//				cbbNXB.addActionListener(new ActionListener() {
+//
+//					public void actionPerformed(ActionEvent e) {
+//						showTenNXB();
+//					}
+//				});
+//
+//				cbbNXB.setBounds(200, 300, 100, 30);
+//				txMaNXB = new JTextField();
+//				txMaNXB.setBounds(310, 300, 90, 30);
+//				txMaNXB.setEnabled(false);
+//
+//				String getcbbMaNXB = cbbNXB.getSelectedItem().toString();
+//				for (int p = 0; p < arrNXB.size(); p++) {
+//					if (getcbbMaNXB.equals(arrNXB.get(p).getMaNXB())) {
+//						txMaNXB.setText(arrNXB.get(p).getTenNXB());
+//					}
+//				}
+//				pQLS.add(txMaNXB);
+//				pQLS.add(cbbNXB);
+//				toadoyTextField = toadoyTextField + 40;
+//				break;
+//			}
+			case 4: {
 				txSoluong = new JTextField();
 				txSoluong.setBounds(toadoxTextField, toadoyTextField, 200, 30);
 				txSoluong.setEnabled(false);
@@ -266,7 +272,7 @@ public class SanphamGUI extends JPanel implements ActionListener, MouseListener 
 				toadoyTextField = toadoyTextField + 40;
 				break;
 			}
-			case 7: {
+			case 5: {
 				txDongiaban = new JTextField();
 				txDongiaban.setBounds(toadoxTextField, toadoyTextField, 200, 30);
 				pQLS.add(txDongiaban);
@@ -309,29 +315,29 @@ public class SanphamGUI extends JPanel implements ActionListener, MouseListener 
 		}
 	}
 
-	private void showTenTG() {
-		TacGiaBUS a = new TacGiaBUS();
-		ArrayList<TacGiaDTO> arrTG = new ArrayList<TacGiaDTO>();
-		arrTG = a.docTacGia();
-		String getcbbMaTG = cbbMaTG.getSelectedItem().toString();
-		for (int p = 0; p < arrTG.size(); p++) {
-			if (getcbbMaTG.equals(arrTG.get(p).getMaTG())) {
-				txMaTG.setText(arrTG.get(p).getTenTG());
-			}
-		}
-	}
-
-	private void showTenNXB() {
-		NXBBUS a = new NXBBUS();
-		ArrayList<NXBDTO> arrNXB = new ArrayList<NXBDTO>();
-		arrNXB = a.docNXB();
-		String getcbbMaNXB = cbbNXB.getSelectedItem().toString();
-		for (int p = 0; p < arrNXB.size(); p++) {
-			if (getcbbMaNXB.equals(arrNXB.get(p).getMaNXB())) {
-				txMaNXB.setText(arrNXB.get(p).getTenNXB());
-			}
-		}
-	}
+//	private void showTenTG() {
+//		TacGiaBUS a = new TacGiaBUS();
+//		ArrayList<TacGiaDTO> arrTG = new ArrayList<TacGiaDTO>();
+//		arrTG = a.docTacGia();
+//		String getcbbMaTG = cbbMaTG.getSelectedItem().toString();
+//		for (int p = 0; p < arrTG.size(); p++) {
+//			if (getcbbMaTG.equals(arrTG.get(p).getMaTG())) {
+//				txMaTG.setText(arrTG.get(p).getTenTG());
+//			}
+//		}
+//	}
+//
+//	private void showTenNXB() {
+//		NXBBUS a = new NXBBUS();
+//		ArrayList<NXBDTO> arrNXB = new ArrayList<NXBDTO>();
+//		arrNXB = a.docNXB();
+//		String getcbbMaNXB = cbbNXB.getSelectedItem().toString();
+//		for (int p = 0; p < arrNXB.size(); p++) {
+//			if (getcbbMaNXB.equals(arrNXB.get(p).getMaNXB())) {
+//				txMaNXB.setText(arrNXB.get(p).getTenNXB());
+//			}
+//		}
+//	}
 
 	public JPanel CHUCNANG() {
 		JPanel pchucnang = new JPanel();
@@ -421,9 +427,7 @@ public class SanphamGUI extends JPanel implements ActionListener, MouseListener 
 		Vector row = new Vector();
 		row.add(Sanpham.getMaSanpham());
 		row.add(Sanpham.getTenSanpham());
-		row.add(Sanpham.getMaTG());
 		row.add(Sanpham.getMaTL());
-		row.add(Sanpham.getMaNXB());
 		row.add(Sanpham.getSoLuong());
 		row.add(Sanpham.getDonGia());
 		model.addRow(row);
@@ -525,8 +529,6 @@ public class SanphamGUI extends JPanel implements ActionListener, MouseListener 
 					Sanpham.setMaSanpham(txMaSanpham.getText());
 					Sanpham.setTenSanpham(txTenSanpham.getText());
 					Sanpham.setMaTL(cbbMaTL.getSelectedItem().toString());
-					Sanpham.setMaTG(cbbMaTG.getSelectedItem().toString());
-					Sanpham.setMaNXB(cbbNXB.getSelectedItem().toString());
 					Sanpham.setSoLuong(txSoluong.getText().toString());
 					Sanpham.setDonGia(txDongiaban.getText().toString());
 					bus.themSanpham(Sanpham);// thêm sách bên BUS đã có thêm vào database
@@ -606,9 +608,7 @@ public class SanphamGUI extends JPanel implements ActionListener, MouseListener 
 			tblQLS.setModel(model);
 			Sanpham.setMaSanpham(txMaSanpham.getText());// nap du lieu vao doi tuong(textfield)
 			Sanpham.setTenSanpham(txTenSanpham.getText());
-			Sanpham.setMaTG(cbbMaTG.getSelectedItem().toString());
 			Sanpham.setMaTL(cbbMaTL.getSelectedItem().toString());
-			Sanpham.setMaNXB(cbbNXB.getSelectedItem().toString());
 			Sanpham.setSoLuong(txSoluong.getText().toString());
 			Sanpham.setDonGia(txDongiaban.getText().toString());
 
@@ -620,7 +620,7 @@ public class SanphamGUI extends JPanel implements ActionListener, MouseListener 
 	private void ABCEFG(String condition, String text) {
 		SanphamBUS bus = new SanphamBUS();
 		switch (condition) {
-		case "Mã sách":
+		case "Mã sản phẩm":
 			Add_header();
 			model.setRowCount(0);
 			kq = bus.timkiem_maSanpham(text);
@@ -632,13 +632,7 @@ public class SanphamGUI extends JPanel implements ActionListener, MouseListener 
 			kq = bus.timkiem_matl(text);
 			Search();
 			break;
-		case "Mã TG":
-			Add_header();
-			model.setRowCount(0);
-			kq = bus.timkiem_matacgia(text);
-			Search();
-			break;
-		case "Tên sách":
+		case "Tên sản phẩm":
 			Add_header();
 			model.setRowCount(0);
 			kq = bus.timkiem_tenSanpham(text);
@@ -655,9 +649,7 @@ public class SanphamGUI extends JPanel implements ActionListener, MouseListener 
 				Vector row = new Vector();
 				row.add(Sanpham.getMaSanpham());
 				row.add(Sanpham.getTenSanpham());
-				row.add(Sanpham.getMaTG());
 				row.add(Sanpham.getMaTL());
-				row.add(Sanpham.getMaNXB());
 				row.add(Sanpham.getSoLuong());
 				row.add(Sanpham.getDonGia());
 				mode.addRow(row);
@@ -749,7 +741,7 @@ public class SanphamGUI extends JPanel implements ActionListener, MouseListener 
 		// Add_header();
 		model.setRowCount(0);
 		for (SanphamDTO s : dsSanpham) {
-			model.addRow(new Object[] { s.getMaSanpham(), s.getTenSanpham(), s.getMaTG(), s.getMaTL(), s.getMaNXB(),
+			model.addRow(new Object[] { s.getMaSanpham(), s.getTenSanpham(), s.getMaTL(),
 					s.getSoLuong(), s.getDonGia() });
 		}
 		tblQLS.setModel(model);

@@ -6,6 +6,7 @@
  */
 package GUI;
 
+import BUS.CongCu;
 import BUS.NXBBUS;
 import BUS.SanphamBUS;
 import BUS.TacGiaBUS;
@@ -19,11 +20,14 @@ import java.awt.*;
 import static java.awt.Font.BOLD;
 import java.awt.event.*;
 import java.io.BufferedOutputStream;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Vector;
+import javafx.scene.control.Cell;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -33,7 +37,9 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.w3c.dom.events.EventTarget;
 import org.w3c.dom.events.MouseEvent;
+import org.w3c.dom.views.AbstractView;
 
 /**
  *
@@ -401,9 +407,7 @@ public class DanhMucSanpham extends JPanel implements ActionListener, MouseListe
 		Vector row = new Vector();
 		row.add(Sanpham.getMaSanpham());
 		row.add(Sanpham.getTenSanpham());
-		row.add(Sanpham.getMaTG());
 		row.add(Sanpham.getMaTL());
-		row.add(Sanpham.getMaNXB());
 		row.add(Sanpham.getSoLuong());
 		row.add(Sanpham.getDonGia());
 		model.addRow(row);
@@ -424,8 +428,6 @@ public class DanhMucSanpham extends JPanel implements ActionListener, MouseListe
 		Sanpham.setMaSanpham(txMaSanpham.getText());
 		Sanpham.setTenSanpham(txTenSanpham.getText());
 		Sanpham.setMaTL(cbbMaTL.getSelectedItem().toString());
-		Sanpham.setMaTG(cbbMaTG.getSelectedItem().toString());
-		Sanpham.setMaNXB(cbbNXB.getSelectedItem().toString());
 		Sanpham.setSoLuong(txSoluong.getText());
 		Sanpham.setDonGia(txDongiaban.getText());
 		String maSanpham = txMaSanpham.getText();
@@ -519,9 +521,7 @@ public class DanhMucSanpham extends JPanel implements ActionListener, MouseListe
 			tblQLS.setModel(model);
 			Sanpham.setMaSanpham(txMaSanpham.getText());// nap du lieu vao doi tuong(textfield)
 			Sanpham.setTenSanpham(txTenSanpham.getText());
-			Sanpham.setMaTG(cbbMaTG.getSelectedItem().toString());
 			Sanpham.setMaTL(cbbMaTL.getSelectedItem().toString());
-			Sanpham.setMaNXB(cbbNXB.getSelectedItem().toString());
 			Sanpham.setSoLuong(txSoluong.getText());
 			Sanpham.setDonGia(txDongiaban.getText());
 
@@ -544,9 +544,7 @@ public class DanhMucSanpham extends JPanel implements ActionListener, MouseListe
 			tblQLS.setModel(model);
 			Sanpham.setMaSanpham(txMaSanpham.getText());// nap du lieu vao doi tuong(textfield)
 			Sanpham.setTenSanpham(txTenSanpham.getText());
-			Sanpham.setMaTG(cbbMaTG.getSelectedItem().toString());
 			Sanpham.setMaTL(cbbMaTL.getSelectedItem().toString());
-			Sanpham.setMaNXB(cbbNXB.getSelectedItem().toString());
 			Sanpham.setSoLuong(txSoluong.getText());
 			Sanpham.setDonGia(txDongiaban.getText());
 
@@ -575,9 +573,7 @@ public class DanhMucSanpham extends JPanel implements ActionListener, MouseListe
 						Vector row = new Vector();
 						row.add(Sanpham.getMaSanpham());
 						row.add(Sanpham.getTenSanpham());
-						row.add(Sanpham.getMaTG());
 						row.add(Sanpham.getMaTL());
-						row.add(Sanpham.getMaNXB());
 						row.add(Sanpham.getSoLuong());
 						row.add(Sanpham.getDonGia());
 						mode.addRow(row);
@@ -610,9 +606,7 @@ public class DanhMucSanpham extends JPanel implements ActionListener, MouseListe
 						Vector row = new Vector();// hienthi Sanpham
 						row.add(Sanpham.getMaSanpham());
 						row.add(Sanpham.getTenSanpham());
-						row.add(Sanpham.getMaTG());
 						row.add(Sanpham.getMaTL());
-						row.add(Sanpham.getMaNXB());
 						row.add(Sanpham.getSoLuong());
 						row.add(Sanpham.getDonGia());
 						model.addRow(row);
@@ -665,14 +659,10 @@ public class DanhMucSanpham extends JPanel implements ActionListener, MouseListe
 			cell = row.createCell(1, CellType.STRING);
 			cell.setCellValue("Tên nước uống");
 			cell = row.createCell(2, CellType.STRING);
-			cell.setCellValue("Mã tác giả");
-			cell = row.createCell(3, CellType.STRING);
 			cell.setCellValue("Mã thể loại");
-			cell = row.createCell(4, CellType.STRING);
-			cell.setCellValue("Mã NXB");
-			cell = row.createCell(5, CellType.STRING);
+			cell = row.createCell(3, CellType.STRING);
 			cell.setCellValue("Số lượng");
-			cell = row.createCell(6, CellType.STRING);
+			cell = row.createCell(4, CellType.STRING);
 			cell.setCellValue("Đơn giá bán");
 
 			for (int i = 0; i < tblQLS.getRowCount(); i++) {
@@ -704,7 +694,7 @@ public class DanhMucSanpham extends JPanel implements ActionListener, MouseListe
 		// Add_header();
 		model.setRowCount(0);
 		for (SanphamDTO s : dsSanpham) {
-			model.addRow(new Object[] { s.getMaSanpham(), s.getTenSanpham(), s.getMaTG(), s.getMaTL(), s.getMaNXB(),
+			model.addRow(new Object[] { s.getMaSanpham(), s.getTenSanpham(), s.getMaTL(),
 					s.getSoLuong(), s.getDonGia() });
 		}
 		tblQLS.setModel(model);

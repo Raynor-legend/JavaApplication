@@ -24,7 +24,7 @@ public class Connect {
 
 	public Connect() {
 		// Class.forName("com.mysql.jdbc.Driver").newInstance();
-		 
+		// getConnect();
 	}
 
 	// sử dụng lớp
