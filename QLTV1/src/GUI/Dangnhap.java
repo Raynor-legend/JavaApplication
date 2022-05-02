@@ -32,7 +32,7 @@ public class Dangnhap extends javax.swing.JFrame {
     public Dangnhap() {
         initComponents();
         setLocationRelativeTo(null);
-        setResizable(false);
+        
     }
 
     /**
@@ -247,9 +247,8 @@ public class Dangnhap extends javax.swing.JFrame {
                     if (rs.getString(3).toString().equals("NV")) {
                         GUImenu giaodien = new GUImenu();
                         //KhachHangmenu giaodien=new Adminmenu();
-                        giaodien.setVisible(true);
-                        giaodien.setResizable(false);
-                        giaodien.setLocationRelativeTo(null);
+                        
+                       
                         this.setVisible(false);
                     } else if (rs.getString(3).toString().equals("admin")) {
                         Adminmenu banhang = new Adminmenu();

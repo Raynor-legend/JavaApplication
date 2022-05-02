@@ -31,11 +31,11 @@ public class GUImenu extends JFrame {
 
 //    privateJPanel pn_TaiKhoan=new JPanel();
     //https://stackoverflow.com/questions/3680221/how-can-i-get-screen-resolution-in-java
-    static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    public static int width = (int) (screenSize.getWidth());
-    public static int height = (int) (screenSize.getHeight());
-    public static int width_menu = width * 16 / 100;
-    public static int width_content = width;
+    public Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    public  int width = (int) (screenSize.getWidth());
+    public  int height = (int) (screenSize.getHeight());
+    public  int width_menu = width * 16 / 100;
+    public  int width_content = width;
     
     public GUImenu() {
         initcomponent();
@@ -50,7 +50,7 @@ public class GUImenu extends JFrame {
         setUndecorated(true);
         setVisible(true);
         JPanel menu = menu();
-        menu.setPreferredSize(new Dimension(width_menu, 0));
+        menu.setPreferredSize(new Dimension(this.width_menu, 0));
         add(menu, BorderLayout.WEST);
         JButton btdangxuat = new JButton("Đăng xuất");
         btdangxuat.setBounds(0, 677, 220, 50);
@@ -77,7 +77,7 @@ public class GUImenu extends JFrame {
         content.setPreferredSize(new Dimension(width_content, 0));
         add(content, BorderLayout.CENTER);
 
-        setSize(width, height);
+        setSize(this.width, this.height);
         setResizable(true);
     }
 
