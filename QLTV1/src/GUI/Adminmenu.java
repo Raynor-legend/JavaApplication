@@ -177,7 +177,7 @@ public class Adminmenu extends JFrame {
         JPanel header = new JPanel(null);
         header.setBackground(Color.decode("#455A64"));
 
-        JLabel title = new JLabel("QUẢN LÝ CỬA HÀNG SÁCH");
+        JLabel title = new JLabel("QUẢN LÝ CỬA HÀNG BÁN NƯỚC");
         title.setBounds(width * 50 / 100, 0, 300, 30);
         title.setFont(new Font("Arial", Font.BOLD, 18));
         title.setForeground(Color.WHITE);

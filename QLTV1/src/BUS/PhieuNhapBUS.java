@@ -11,7 +11,7 @@ package BUS;
  */
 import DAO.PhieuNhapDAO;
 import DTO.PhieuNhapDTO;
-import static BUS.SachBUS.dssach;
+import static BUS.SanphamBUS.dsSanpham;
 import DAO.CTHDNhapDAO;
 import java.util.ArrayList;
 import java.util.Vector;

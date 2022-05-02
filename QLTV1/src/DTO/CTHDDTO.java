@@ -11,77 +11,81 @@ package DTO;
  */
 public class CTHDDTO {
 
-    private int MaHD;
-    private String MaSach;
-    private String TenSach;
-    private int sTT;
-   
-    private String ThanhTien;
-    private String GiaBan;
-    private String Soluong;
- public int getSTT(){
-        return sTT;
-    }
-    public void setSTT(int s){
-        this.sTT=s;
-    }
-    public String getTenSach() {
-        return TenSach;
-    }
+	private int MaHD;
+	private String MaSanpham;
+	private String TenSanpham;
+	private int sTT;
 
-    public void setTenSach(String TenSach) {
-        this.TenSach = TenSach;
-    }
-    public int getMaHD() {
-        return MaHD;
-    }
+	private String ThanhTien;
+	private String GiaBan;
+	private String Soluong;
 
-    public void setMaHD(int MaHD) {
-        this.MaHD = MaHD;
-    }
+	public int getSTT() {
+		return sTT;
+	}
 
-    public String getMaSach() {
-        return MaSach;
-    }
+	public void setSTT(int s) {
+		this.sTT = s;
+	}
 
-    public void setMaSach(String MaSach) {
-        this.MaSach = MaSach;
-    }
+	public String getTenSanpham() {
+		return TenSanpham;
+	}
 
-    public String getThanhTien() {
-        return ThanhTien;
-    }
+	public void setTenSanpham(String TenSanpham) {
+		this.TenSanpham = TenSanpham;
+	}
 
-    public void setThanhTien(String ThanhTien) {
-        this.ThanhTien = ThanhTien;
-    }
+	public int getMaHD() {
+		return MaHD;
+	}
 
-    public String getGiaBan() {
-        return GiaBan;
-    }
+	public void setMaHD(int MaHD) {
+		this.MaHD = MaHD;
+	}
 
-    public void setGiaBan(String GiaBan) {
-        this.GiaBan = GiaBan;
-    }
+	public String getMaSanpham() {
+		return MaSanpham;
+	}
 
-    public String getSoluong() {
-        return Soluong;
-    }
+	public void setMaSanpham(String MaSanpham) {
+		this.MaSanpham = MaSanpham;
+	}
 
-    public void setSoluong(String Soluong) {
-        this.Soluong = Soluong;
-    }
+	public String getThanhTien() {
+		return ThanhTien;
+	}
 
-    public CTHDDTO() {
+	public void setThanhTien(String ThanhTien) {
+		this.ThanhTien = ThanhTien;
+	}
 
-    }
+	public String getGiaBan() {
+		return GiaBan;
+	}
 
-    public CTHDDTO(String MaHD, String MaSach, String ThanhTien, String GiaBan, String Soluong) {
-        this.GiaBan = GiaBan;
-        this.MaHD = 0;
-        this.MaSach = MaSach;
-        this.Soluong = Soluong;
-        this.ThanhTien = ThanhTien;
-    }
+	public void setGiaBan(String GiaBan) {
+		this.GiaBan = GiaBan;
+	}
+
+	public String getSoluong() {
+		return Soluong;
+	}
+
+	public void setSoluong(String Soluong) {
+		this.Soluong = Soluong;
+	}
+
+	public CTHDDTO() {
+
+	}
+
+	public CTHDDTO(String MaHD, String MaSanpham, String ThanhTien, String GiaBan, String Soluong) {
+		this.GiaBan = GiaBan;
+		this.MaHD = 0;
+		this.MaSanpham = MaSanpham;
+		this.Soluong = Soluong;
+		this.ThanhTien = ThanhTien;
+	}
 
 }

@@ -12,10 +12,10 @@ package GUI;
  */
 import BUS.CongCu;
 import BUS.NCCBUS;
-import BUS.SachBUS;
+import BUS.SanphamBUS;
 import DAO.NCCDAO;
 import DTO.NCCDTO;
-import DTO.SachDTO;
+import DTO.SanphamDTO;
 import java.awt.*;
 import static java.awt.Font.BOLD;
 import java.awt.Frame;
@@ -84,14 +84,14 @@ public class NCCGUI extends JPanel implements ActionListener, MouseListener {
         }
     }
 
-    private void Add_row(NCCDTO sach) {
+    private void Add_row(NCCDTO Sanpham) {
         Vector row = new Vector();
-        row.add(sach.getMaNCC());
-        row.add(sach.getTenNCC());
-        row.add(sach.getDiachi());
-        row.add(sach.getSdt());
-        row.add(sach.getMail());
-        row.add(sach.getTrangThai());
+        row.add(Sanpham.getMaNCC());
+        row.add(Sanpham.getTenNCC());
+        row.add(Sanpham.getDiachi());
+        row.add(Sanpham.getSdt());
+        row.add(Sanpham.getMail());
+        row.add(Sanpham.getTrangThai());
         model.addRow(row);
         tblNCC.setModel(model);
     }
@@ -135,7 +135,7 @@ public class NCCGUI extends JPanel implements ActionListener, MouseListener {
         JLabel[] label;
         label = new JLabel[7];
         JTextField[] textfield;
-        // SachGUI a=new SachGUI();
+        // SanphamGUI a=new SanphamGUI();
         //a.tableMouseClicked(e);
         String[] arrNCC = {"Tìm kiếm", "Mã nhà cung cấp", "Tên nhà cung cấp", "Địa chỉ", "SĐT", "Mail", "Trạng Thái"};
 
@@ -654,7 +654,7 @@ public class NCCGUI extends JPanel implements ActionListener, MouseListener {
 //        if(e.getSource()==button[1]){
 //            btXoaMouseClicked();
 //            int i=tblQLS.getSelectedRow();
-//           dssach.remove(i);
+//           dsSanpham.remove(i);
 //            
 //        }
     }
@@ -663,23 +663,23 @@ public class NCCGUI extends JPanel implements ActionListener, MouseListener {
         int i=tblQLS.getSelectedRow();
         if(i>=0)
         {
-            SachDTO sach=new SachDTO();
-            sach.MaSach=txMasach.getText();
-            sach.TenSach=txTensach.getText();
-            sach.MaTL=txMaTL.getText();
-            sach.MaTG=txMaTG.getText();
-            sach.MaNXB=txMaNXB.getText();
-            sach.SoLuong=Integer.parseInt(txSoluong.getText());
-            sach.DonGia=Integer.parseInt(txDongiaban.getText());
+            SanphamDTO Sanpham=new SanphamDTO();
+            Sanpham.MaSanpham=txMaSanpham.getText();
+            Sanpham.TenSanpham=txTenSanpham.getText();
+            Sanpham.MaTL=txMaTL.getText();
+            Sanpham.MaTG=txMaTG.getText();
+            Sanpham.MaNXB=txMaNXB.getText();
+            Sanpham.SoLuong=Integer.parseInt(txSoluong.getText());
+            Sanpham.DonGia=Integer.parseInt(txDongiaban.getText());
             
-            SachDTO old=dssach.set(i,sach);
-            model.setValueAt(sach.MaSach, i,0);
-            model.setValueAt(sach.TenSach, i,1);
-            model.setValueAt(sach.MaTL, i,2);
-            model.setValueAt(sach.MaTG, i,3);
-            model.setValueAt(sach.MaNXB, i,4);
-            model.setValueAt(sach.SoLuong, i,6);
-            model.setValueAt(sach.DonGia, i,7);
+            SanphamDTO old=dsSanpham.set(i,Sanpham);
+            model.setValueAt(Sanpham.MaSanpham, i,0);
+            model.setValueAt(Sanpham.TenSanpham, i,1);
+            model.setValueAt(Sanpham.MaTL, i,2);
+            model.setValueAt(Sanpham.MaTG, i,3);
+            model.setValueAt(Sanpham.MaNXB, i,4);
+            model.setValueAt(Sanpham.SoLuong, i,6);
+            model.setValueAt(Sanpham.DonGia, i,7);
             tblQLS.setModel(model);
             
             

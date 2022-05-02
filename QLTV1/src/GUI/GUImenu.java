@@ -156,7 +156,7 @@ public class GUImenu extends JFrame {
             //Với mỗi i chỉ tạo 1 panel
             switch (i) {
                 case 0:
-                    SachGUI sach = new SachGUI();
+                    SanphamGUI sach = new SanphamGUI();
                     pn_content[i] = sach;
                     break;
                 case 1:
@@ -207,7 +207,7 @@ public class GUImenu extends JFrame {
         JPanel header = new JPanel(null);
         header.setBackground(Color.decode("#455A64"));
 
-        JLabel title = new JLabel("QUẢN LÝ CỬA HÀNG SÁCH");
+        JLabel title = new JLabel("QUẢN LÝ CỬA HÀNG BÁN NƯỚC");
         title.setBounds(width * 50 / 100, 0, 300, 30);
         title.setFont(new Font("Arial", Font.BOLD, 18));
         title.setForeground(Color.WHITE);

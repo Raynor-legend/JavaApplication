@@ -70,7 +70,7 @@ public class CTHDGUI{
       private void Add_header() {
         Vector header = new Vector();
         header.add("Mã hóa đơn");
-        header.add("Mã sách");
+        header.add("Mã nước uống");
         header.add("Đơn giá bán");
         header.add("Số lượng");
         header.add("Thành tiền");
@@ -81,7 +81,7 @@ public class CTHDGUI{
       private void Add_row(CTHDDTO hd) {
         Vector row = new Vector();
         row.add(hd.getMaHD());
-        row.add(hd.getMaSach());
+        row.add(hd.getMaSanpham());
         row.add(hd.getGiaBan());
         row.add(hd.getSoluong());
         row.add(hd.getThanhTien());
@@ -110,7 +110,7 @@ public class CTHDGUI{
         ptablecthd.setBackground(Color.decode("#FFCA28"));
         header = new Vector();
         header.add("Mã hóa đơn");
-        header.add("Mã sách");
+        header.add("Mã nước uống");
         header.add("Đơn giá bán");
         header.add("Số lượng");
         header.add("Thành tiền");

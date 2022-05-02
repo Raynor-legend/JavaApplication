@@ -27,8 +27,8 @@ public class CTHDNhapDAO {
            {
                CTHDNhapDTO cthdNhap = new CTHDNhapDTO();
                cthdNhap.setMaPhieuNhap(rs.getInt(2));
-               cthdNhap.setMaSach(rs.getString(3));//Dat gia tri cho ten sach 
-               cthdNhap.setTenSach(rs.getString(4));
+               cthdNhap.setMaSanpham(rs.getString(3));//Dat gia tri cho ten Sanpham 
+               cthdNhap.setTenSanpham(rs.getString(4));
                cthdNhap.setDonGia(rs.getString(5));
                cthdNhap.setSoLuong(rs.getString(6));
                cthdNhap.setThanhTien(rs.getString(7));
@@ -47,8 +47,8 @@ public class CTHDNhapDAO {
             String qry = "insert into cthdnhap values (";
            qry = qry + "'" + ct.getSTT()+ "'";
             qry = qry + ",'" + ct.getMaPhieuNhap()+ "'";
-            qry = qry + "," + "'" + ct.getMaSach() + "'";
-            qry = qry + "," + "'" + ct.getTenSach()+ "'";
+            qry = qry + "," + "'" + ct.getMaSanpham() + "'";
+            qry = qry + "," + "'" + ct.getTenSanpham()+ "'";
             
             qry = qry + "," + "'" + ct.getDonGia()+ "'";
             qry = qry + "," + "'" + ct.getSoLuong() + "'";
@@ -79,8 +79,8 @@ public class CTHDNhapDAO {
         try {
             String qry = "Update cthdnhap Set ";
             qry = qry + "MAPHIEUNHAP=" + "'" + ct.getMaPhieuNhap()+ "',";
-            qry = qry + "MASACH=" + "'" + ct.getMaSach() + "'";
-            qry = qry + "TENSACH=" + "'" + ct.getTenSach()+ "'";
+            qry = qry + "MASP=" + "'" + ct.getMaSanpham() + "'";
+            qry = qry + "TENSP=" + "'" + ct.getTenSanpham()+ "'";
             qry = qry + "DONGIANHAP=" + "'" + ct.getDonGia()+ "'";
             qry = qry + "SOLUONG=" + "'" + ct.getSoLuong() + "'";
             qry = qry + "THANHTIEN=" + "'" + ct.getThanhTien() + "'";

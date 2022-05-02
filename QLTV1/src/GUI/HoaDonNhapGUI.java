@@ -14,11 +14,11 @@ import BUS.CTHDNhapBUS;
 import BUS.PhieuNhapBUS;
 import BUS.NhanVienBUS;
 import BUS.KhachHangBUS;
-import BUS.SachBUS;
+import BUS.SanphamBUS;
 import DAO.PhieuNhapDAO;
 import DTO.CTHDNhapDTO;
 import DTO.PhieuNhapDTO;
-import DTO.SachDTO;
+import DTO.SanphamDTO;
 import java.awt.*;
 import static java.awt.Font.BOLD;
 import java.awt.Frame;
@@ -80,7 +80,7 @@ public class HoaDonNhapGUI extends JPanel implements ActionListener, MouseListen
         header.add("Mã nhập");
         header.add("Mã nhân viên");
         header.add("Mã nhà cung cấp");
-        header.add("Ngày nhập sách");
+        header.add("Ngày nhập nước uống");
         header.add("Tổng tiền");
         if (model.getRowCount() == 0) {
             model = new DefaultTableModel(header, 0);
@@ -102,7 +102,7 @@ public class HoaDonNhapGUI extends JPanel implements ActionListener, MouseListen
     private void Add_rowct(CTHDNhapDTO ctpn) {
         Vector row = new Vector();
         row.add(ctpn.getMaPhieuNhap());
-        row.add(ctpn.getMaSach());
+        row.add(ctpn.getMaSanpham());
         row.add(ctpn.getSoLuong());
         row.add(ctpn.getSoLuong());
         row.add(ctpn.getThanhTien());
@@ -299,7 +299,7 @@ public class HoaDonNhapGUI extends JPanel implements ActionListener, MouseListen
         ptablect.setBackground(Color.decode("#FFCA28"));
         header = new Vector();
         header.add("Mã nhập ");
-        header.add("Mã sách");
+        header.add("Mã nước uống");
         header.add("Đơn giá nhập");
         header.add("Số lượng");
         header.add("Thành tiền");
@@ -389,15 +389,15 @@ public class HoaDonNhapGUI extends JPanel implements ActionListener, MouseListen
                 //int maHD = Integer.parseInt(tblQLHD.getValueAt(row, 0).toString());
 
                 CTHDNhapBUS cthd = new CTHDNhapBUS();
-                SachBUS sachBUS = new SachBUS();
+                SanphamBUS SanphamBUS = new SanphamBUS();
                 if (CTHDNhapBUS.dscthdNhap == null) {
                     cthd.docDSCTHD();
                 }
-                if (sachBUS.dssach == null) {
-                    sachBUS.docDSSACH();
+                if (SanphamBUS.dsSanpham == null) {
+                    SanphamBUS.docDSSanpham();
                 }
                 int slCTHD = 0;
-                int slSach = 0;
+                int slSanpham = 0;
                 int i = 0;
                 //Add_headerct();
                 for (CTHDNhapDTO cthdDTO : CTHDNhapBUS.dscthdNhap) {
@@ -405,14 +405,14 @@ public class HoaDonNhapGUI extends JPanel implements ActionListener, MouseListen
                     if (cthdDTO.getMaPhieuNhap()== hoaDon.getMaPhieuNhap()) {
                         System.out.println("MaHD" + cthdDTO.getMaPhieuNhap()+ "Hóa đơn" + hoaDon.getMaPhieuNhap());
                         slCTHD = Integer.parseInt(cthdDTO.getSoLuong());
-                        for (SachDTO sachDTO : sachBUS.dssach) {
+                        for (SanphamDTO SanphamDTO : SanphamBUS.dsSanpham) {
                             i++;
-                            System.out.println("CTHD" + cthdDTO.getMaSach() + "Sach" + sachDTO.getMaSach());
-                            slSach = Integer.parseInt(sachDTO.getSoLuong().toString())-slCTHD;
-                            if (cthdDTO.getMaSach().equals(sachDTO.getMaSach())) {
+                            System.out.println("CTHD" + cthdDTO.getMaSanpham() + "Sanpham" + SanphamDTO.getMaSanpham());
+                            slSanpham = Integer.parseInt(SanphamDTO.getSoLuong().toString())-slCTHD;
+                            if (cthdDTO.getMaSanpham().equals(SanphamDTO.getMaSanpham())) {
 
-                                sachDTO.setSoLuong(String.valueOf(slSach));
-                                sachBUS.sua1Sach(i - 1, sachDTO);
+                                SanphamDTO.setSoLuong(String.valueOf(slSanpham));
+                                SanphamBUS.sua1Sanpham(i - 1, SanphamDTO);
                             }
                         }
                         i = 0;
@@ -540,7 +540,7 @@ public class HoaDonNhapGUI extends JPanel implements ActionListener, MouseListen
         int result = file.showSaveDialog(null);
         if (result == JFileChooser.APPROVE_OPTION) {
             XSSFWorkbook excelWorkbook = new XSSFWorkbook();
-            XSSFSheet excelSheet = excelWorkbook.createSheet("Danh sách nhập sách");
+            XSSFSheet excelSheet = excelWorkbook.createSheet("Danh sách nhập nước uống");
 
             XSSFRow row = null;
             XSSFCell cell = null;
@@ -548,7 +548,7 @@ public class HoaDonNhapGUI extends JPanel implements ActionListener, MouseListen
             row = excelSheet.createRow((short) 1);
             row.setHeight((short) 400);
             cell = row.createCell(0, CellType.STRING);
-            cell.setCellValue("DANH SÁCH PHIẾU NHẬP SÁCH");
+            cell.setCellValue("DANH SÁCH PHIẾU NHẬP NƯỚC UỐNG");
 
             row = excelSheet.createRow((short) 2);
             row.setHeight((short) 400);
@@ -613,7 +613,7 @@ public class HoaDonNhapGUI extends JPanel implements ActionListener, MouseListen
 //        if(e.getSource()==button[1]){
 //            btXoaMouseClicked();
 //            int i=tblQLS.getSelectedRow();
-//           dssach.remove(i);
+//           dsSanpham.remove(i);
 //            
 //        }
     }
@@ -659,23 +659,23 @@ public class HoaDonNhapGUI extends JPanel implements ActionListener, MouseListen
         int i=tblQLS.getSelectedRow();
         if(i>=0)
         {
-            SachDTO sach=new SachDTO();
-            sach.MaSach=txMasach.getText();
-            sach.TenSach=txTensach.getText();
-            sach.MaTL=txMaTL.getText();
-            sach.MaTG=txMaTG.getText();
-            sach.MaNXB=txMaNXB.getText();
-            sach.SoLuong=Integer.parseInt(txSoluong.getText());
-            sach.DonGia=Integer.parseInt(txDongiaban.getText());
+            SanphamDTO Sanpham=new SanphamDTO();
+            Sanpham.MaSanpham=txMaSanpham.getText();
+            Sanpham.TenSanpham=txTenSanpham.getText();
+            Sanpham.MaTL=txMaTL.getText();
+            Sanpham.MaTG=txMaTG.getText();
+            Sanpham.MaNXB=txMaNXB.getText();
+            Sanpham.SoLuong=Integer.parseInt(txSoluong.getText());
+            Sanpham.DonGia=Integer.parseInt(txDongiaban.getText());
             
-            SachDTO old=dssach.set(i,sach);
-            model.setValueAt(sach.MaSach, i,0);
-            model.setValueAt(sach.TenSach, i,1);
-            model.setValueAt(sach.MaTL, i,2);
-            model.setValueAt(sach.MaTG, i,3);
-            model.setValueAt(sach.MaNXB, i,4);
-            model.setValueAt(sach.SoLuong, i,6);
-            model.setValueAt(sach.DonGia, i,7);
+            SanphamDTO old=dsSanpham.set(i,Sanpham);
+            model.setValueAt(Sanpham.MaSanpham, i,0);
+            model.setValueAt(Sanpham.TenSanpham, i,1);
+            model.setValueAt(Sanpham.MaTL, i,2);
+            model.setValueAt(Sanpham.MaTG, i,3);
+            model.setValueAt(Sanpham.MaNXB, i,4);
+            model.setValueAt(Sanpham.SoLuong, i,6);
+            model.setValueAt(Sanpham.DonGia, i,7);
             tblQLS.setModel(model);
             
             
