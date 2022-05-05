@@ -3,30 +3,34 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DAO/KhachHangDAO.java</file>
-            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DTO/TaiKhoanDTO.java</file>
             <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DAO/Connect.java</file>
             <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/GUI/quanlimenu.java</file>
-            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/GUI/Dangnhap.java</file>
             <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DAO/CTHDDAO.java</file>
             <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DAO/HoaDonDAO.java</file>
-            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DAO/NCCDAO.java</file>
             <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DAO/SanphamDAO.java</file>
             <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/GUI/SachGUI.java</file>
             <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/GUI/TaiKhoanGUI.java</file>
-            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DAO/NhanVienDAO.java</file>
-            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DAO/ConnectionUtil.java</file>
-            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DAO/SachDAO.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/GUI/DanhMucSanpham.java</file>
             <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DAO/TaiKhoanDAO.java</file>
             <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DTO/NXBDTO.java</file>
-            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DTO/CTHDDTO.java</file>
-            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DAO/ThongKeDAO.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/GUI/DanhMucSach.java</file>
             <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DAO/TheLoaiDAO.java</file>
             <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/GUI/SanphamGUI.java</file>
             <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DAO/PhieuNhapDAO.java</file>
             <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DAO/NXBDAO.java</file>
-            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DTO/CTHDNhapDTO.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/GUI/NhapHangGUI.java</file>
             <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DAO/CTHDNhapDAO.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DAO/KhachHangDAO.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DTO/TaiKhoanDTO.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/GUI/Dangnhap.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DAO/NCCDAO.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DAO/NhanVienDAO.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DAO/ConnectionUtil.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DAO/SachDAO.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DTO/CTHDDTO.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DAO/ThongKeDAO.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/DTO/CTHDNhapDTO.java</file>
+            <file>file:/C:/Users/dongt/eclipse-workspace/JavaApplication-main/JavaApplication-main/JavaApplication/QLTV1/src/GUI/BanHangGUI.java</file>
         </group>
     </open-files>
 </project-private>

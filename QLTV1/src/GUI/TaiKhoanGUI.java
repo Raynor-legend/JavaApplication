@@ -345,6 +345,7 @@ public class TaiKhoanGUI extends JPanel implements ActionListener, MouseListener
 		TaiKhoanDTO tk = new TaiKhoanDTO();
 		TaiKhoanBUS bus = new TaiKhoanBUS();
 		tk.setMaNV(nhanvien.getSelectedItem().toString());
+                 
 		tk.setPass(txtPass.getText());
 		tk.setQuyen(quyen.getSelectedItem().toString());
 
@@ -534,6 +535,7 @@ public class TaiKhoanGUI extends JPanel implements ActionListener, MouseListener
 //    }
 	@Override
 	public void actionPerformed(ActionEvent e) {
+            System.out.println("Value: " + nhanvien.getSelectedItem().toString()); 
 		String src = e.getActionCommand();
 		if (src.equals("Thêm")) {
 			btThemMouseClicked();

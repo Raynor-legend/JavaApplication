@@ -15,21 +15,17 @@ import DTO.NXBDTO;
 import DTO.SachDTO;
 import DTO.TacGiaDTO;
 import DTO.TheLoaiDTO;
-import static GUI.TacGiaGUI.model;
 import java.awt.*;
 import static java.awt.Font.BOLD;
 import java.awt.event.*;
 import java.awt.event.ActionListener;
 
 import java.io.BufferedOutputStream;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Vector;
-import javafx.scene.control.Cell;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -39,9 +35,7 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.w3c.dom.events.EventTarget;
 import org.w3c.dom.events.MouseEvent;
-import org.w3c.dom.views.AbstractView;
 
 /**
  *

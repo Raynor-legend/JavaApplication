@@ -6,7 +6,6 @@
  */
 package GUI;
 
-import BUS.CongCu;
 import BUS.NXBBUS;
 import BUS.SanphamBUS;
 import BUS.TacGiaBUS;
@@ -20,14 +19,11 @@ import java.awt.*;
 import static java.awt.Font.BOLD;
 import java.awt.event.*;
 import java.io.BufferedOutputStream;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Vector;
-import javafx.scene.control.Cell;
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -37,9 +33,7 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.w3c.dom.events.EventTarget;
 import org.w3c.dom.events.MouseEvent;
-import org.w3c.dom.views.AbstractView;
 
 /**
  *

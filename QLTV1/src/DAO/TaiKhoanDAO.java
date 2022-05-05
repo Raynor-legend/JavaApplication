@@ -44,8 +44,7 @@ public class TaiKhoanDAO {
 			String qry = "insert into taikhoan values";
 			qry = qry + "MANV='" + tk.getMaNV() + "'";
 			qry = qry + ",PASS = '" + tk.getPass() + "'";
-			qry = qry + ",  Quyen = '" + tk.getQuyen() + "'";
-
+			qry = qry + ",QUYEN = '" + tk.getQuyen() + "'";
 			qry = qry + ")";
 
 			conn.getStatement();
